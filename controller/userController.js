@@ -128,7 +128,6 @@ const resetPassword = asyncHandler(async(req, res) => {
 
     const isValidNewPassword = await checkPassword(newPassword);
     const isValidConfirmNewPassword = await checkPassword(confirmPassword);
-    console.log(`New Password : ${isValidNewPassword}, Confirm Password : ${isValidConfirmNewPassword}`);
     if(!isValidNewPassword || !isValidConfirmNewPassword) {
         return res.status(400).json({message: "Password is not valid."});
     }
